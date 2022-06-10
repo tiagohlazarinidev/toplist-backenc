@@ -5,13 +5,14 @@ import { CreateUserDTO } from "../../dtos/CreateUserDTO";
 
 export class CreateUserUseCase {
   async execute({
-    cpf,
     name,
     email,
-    streetname,
-    housenumber,
-    borough,
-    cityname,
+    birthday,
+    document,
+    address,
+    houseNumber,
+    district,
+    city,
     cep,
   }: CreateUserDTO): Promise<Client> {
     // Verificar se o usuário já existe
@@ -28,13 +29,14 @@ export class CreateUserUseCase {
     // Criar o usuário
     const user = await prisma.client.create({
       data: {
-        cpf,
         name,
         email,
-        streetname,
-        housenumber,
-        borough,
-        cityname,
+        birthday,
+        document,
+        address,
+        houseNumber,
+        district,
+        city,
         cep,
       },
     });

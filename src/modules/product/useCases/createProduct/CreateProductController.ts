@@ -3,15 +3,15 @@ import { CreateProductUseCase } from "./CreateProductUseCase";
 
 export class CreateProductController {
   async handle(req: Request, res: Response) {
-    const { price, nameproduct, qnty, brand } = req.body;
+    const { nome, marca, preco, quantidade } = req.body;
 
     const createProductUseCase = new CreateProductUseCase();
 
     const result = await createProductUseCase.execute({
-      price,
-      nameproduct,
-      qnty,
-      brand,
+      nome,
+      marca,
+      preco,
+      quantidade,
     });
 
     return res.status(201).json(result);

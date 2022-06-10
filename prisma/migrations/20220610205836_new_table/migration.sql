@@ -1,13 +1,16 @@
 -- CreateTable
 CREATE TABLE "clients" (
     "id" TEXT NOT NULL PRIMARY KEY,
-    "cpf" TEXT NOT NULL,
     "email" TEXT NOT NULL,
+    "cpf" TEXT NOT NULL,
     "name" TEXT NOT NULL,
-    "streetname" TEXT NOT NULL,
-    "housenumber" TEXT NOT NULL,
-    "borough" TEXT NOT NULL,
-    "cityname" TEXT NOT NULL,
+    "pwd" TEXT NOT NULL,
+    "birthday" TEXT NOT NULL,
+    "document" TEXT NOT NULL,
+    "address" TEXT NOT NULL,
+    "houseNumber" TEXT NOT NULL,
+    "district" TEXT NOT NULL,
+    "city" TEXT NOT NULL,
     "cep" TEXT NOT NULL,
     "created_at" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" DATETIME NOT NULL
@@ -16,10 +19,10 @@ CREATE TABLE "clients" (
 -- CreateTable
 CREATE TABLE "products" (
     "id" TEXT NOT NULL PRIMARY KEY,
-    "price" REAL NOT NULL,
-    "nameproduct" TEXT NOT NULL,
-    "qnty" INTEGER NOT NULL,
-    "brand" TEXT NOT NULL
+    "preco" REAL NOT NULL,
+    "nome" TEXT NOT NULL,
+    "marca" TEXT NOT NULL,
+    "quantidade" INTEGER NOT NULL
 );
 
 -- CreateTable
@@ -36,4 +39,4 @@ CREATE TABLE "product_rent" (
 CREATE UNIQUE INDEX "clients_email_key" ON "clients"("email");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "products_nameproduct_key" ON "products"("nameproduct");
+CREATE UNIQUE INDEX "products_nome_key" ON "products"("nome");

@@ -13,17 +13,21 @@ datasource db {
 }
 
 model Client {
-  id          String   @id @default(uuid())
+  id          String @id @default(uuid())
+  email       String @unique
   cpf         String
-  email       String   @unique
   name        String
-  streetname  String
-  housenumber String
-  borough     String
-  cityname    String
+  pwd         String
+  birthday    String
+  document    String
+  address     String
+  houseNumber String
+  district    String
+  city        String
   cep         String
-  created_at  DateTime @default(now())
-  updated_at  DateTime @updatedAt
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
 
   product_rent ProductRent[] @relation("client")
 
@@ -32,10 +36,10 @@ model Client {
 
 model Product {
   id           String        @id @default(uuid())
-  price        Float
-  nameproduct  String        @unique
-  qnty         Int
-  brand        String
+  preco        Float
+  nome         String        @unique
+  marca        String
+  quantidade   Int
   product_rent ProductRent[] @relation("product")
 
   @@map("products")

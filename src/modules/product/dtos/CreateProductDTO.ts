@@ -1,6 +1,6 @@
 export interface CreateProductDTO {
-  price: number;
-  nameproduct: string;
-  qnty: number;
-  brand: string;
+  nome: string;
+  marca: string;
+  preco: number;
+  quantidade: number;
 }

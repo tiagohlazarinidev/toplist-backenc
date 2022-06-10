@@ -4,26 +4,28 @@ import { CreateUserUseCase } from "./CreateUserUseCase";
 export class CreateUserController {
   async handle(req: Request, res: Response) {
     const {
-      cpf,
       name,
       email,
-      streetname,
-      housenumber,
-      borough,
-      cityname,
+      birthday,
+      document,
+      address,
+      houseNumber,
+      district,
+      city,
       cep,
     } = req.body;
 
     const createUserUseCase = new CreateUserUseCase();
 
     const result = await createUserUseCase.execute({
-      cpf,
       name,
       email,
-      streetname,
-      housenumber,
-      borough,
-      cityname,
+      birthday,
+      document,
+      address,
+      houseNumber,
+      district,
+      city,
       cep,
     });
 

@@ -5,7 +5,7 @@ export class GetProductUseCase {
   async execute(): Promise<Product[]> {
     const products = await prisma.product.findMany({
       orderBy: {
-        nameproduct: "desc",
+        nome: "desc",
       },
       include: {
         product_rent: {

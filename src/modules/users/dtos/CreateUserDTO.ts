@@ -1,10 +1,11 @@
 export interface CreateUserDTO {
-  cpf: string;
   name: string;
   email: string;
-  streetname: string;
-  housenumber: string;
-  borough: string;
-  cityname: string;
+  birthday: string;
+  document: string;
+  address: string;
+  houseNumber: string;
+  district: string;
+  city: string;
   cep: string;
 }

@@ -5,15 +5,15 @@ import { CreateProductDTO } from "../../dtos/CreateProductDTO";
 
 export class CreateProductUseCase {
   async execute({
-    price,
-    nameproduct,
-    qnty,
-    brand,
+    nome,
+    marca,
+    preco,
+    quantidade,
   }: CreateProductDTO): Promise<Product> {
     // Verificar se o filme já existe
     const movieAlreadyExists = await prisma.product.findUnique({
       where: {
-        nameproduct,
+        nome
       },
     });
 
@@ -24,10 +24,10 @@ export class CreateProductUseCase {
     // Criar o filme
     const movie = await prisma.product.create({
       data: {
-        price,
-        nameproduct,
-        qnty,
-        brand,
+        nome,
+        marca,
+        preco,
+        quantidade
       },
     });
 
