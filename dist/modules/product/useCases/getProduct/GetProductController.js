@@ -43,12 +43,12 @@ var GetProductController = /** @class */ (function () {
     }
     GetProductController.prototype.handle = function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
-            var getMoviesByReleaseDateUseCase, result;
+            var getProductUseCase, result;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        getMoviesByReleaseDateUseCase = new GetProductUseCase_1.GetProductUseCase();
-                        return [4 /*yield*/, getMoviesByReleaseDateUseCase.execute()];
+                        getProductUseCase = new GetProductUseCase_1.GetProductUseCase();
+                        return [4 /*yield*/, getProductUseCase.execute()];
                     case 1:
                         result = _a.sent();
                         return [2 /*return*/, res.status(200).json(result)];

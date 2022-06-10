@@ -43,13 +43,13 @@ var CreateProductController = /** @class */ (function () {
     }
     CreateProductController.prototype.handle = function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
-            var _a, price, nameproduct, qnty, brand, createMovieUseCase, result;
+            var _a, price, nameproduct, qnty, brand, createProductUseCase, result;
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
                         _a = req.body, price = _a.price, nameproduct = _a.nameproduct, qnty = _a.qnty, brand = _a.brand;
-                        createMovieUseCase = new CreateProductUseCase_1.CreateProductUseCase();
-                        return [4 /*yield*/, createMovieUseCase.execute({
+                        createProductUseCase = new CreateProductUseCase_1.CreateProductUseCase();
+                        return [4 /*yield*/, createProductUseCase.execute({
                                 price: price,
                                 nameproduct: nameproduct,
                                 qnty: qnty,

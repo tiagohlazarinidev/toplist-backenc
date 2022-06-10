@@ -3,7 +3,7 @@ import { prisma } from "../../../../prisma/client";
 
 export class GetProductUseCase {
   async execute(): Promise<Product[]> {
-    const movies = await prisma.product.findMany({
+    const products = await prisma.product.findMany({
       orderBy: {
         nameproduct: "desc",
       },
@@ -21,6 +21,6 @@ export class GetProductUseCase {
       },
     });
 
-    return movies;
+    return products;
   }
 }

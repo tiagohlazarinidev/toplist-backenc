@@ -35,7 +35,7 @@ model Product {
   price        Float
   nameproduct  String        @unique
   qnty         Int
-  brand        Int
+  brand        String
   product_rent ProductRent[] @relation("product")
 
   @@map("products")

@@ -19,7 +19,7 @@ CREATE TABLE "products" (
     "price" REAL NOT NULL,
     "nameproduct" TEXT NOT NULL,
     "qnty" INTEGER NOT NULL,
-    "brand" INTEGER NOT NULL
+    "brand" TEXT NOT NULL
 );
 
 -- CreateTable
