@@ -11,23 +11,23 @@ export class CreateProductUseCase {
     quantidade,
   }: CreateProductDTO): Promise<Product> {
     // Verificar se o filme já existe
-    const movieAlreadyExists = await prisma.product.findUnique({
+    const productAlreadyExists = await prisma.product.findUnique({
       where: {
-        nome
+        nome,
       },
     });
 
-    if (movieAlreadyExists) {
+    if (productAlreadyExists) {
       throw new AppError("Product already exists!");
     }
 
-    // Criar o filme
+    // Criar o produto
     const movie = await prisma.product.create({
       data: {
         nome,
         marca,
         preco,
-        quantidade
+        quantidade,
       },
     });
 
