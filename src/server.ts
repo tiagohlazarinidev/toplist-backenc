@@ -1,10 +1,16 @@
 import "express-async-errors";
+
 import express, { NextFunction, Request, Response } from "express";
 import { AppError } from "./errors/AppError";
 import { routes } from "./routes";
-
+import cors from "cors";
 const app = express();
+const allowedOrigins = ["http://localhost:19006"];
 
+const options: cors.CorsOptions = {
+  origin: allowedOrigins,
+};
+app.use(cors(options));
 app.use(express.json());
 
 app.use(routes);
@@ -24,5 +30,5 @@ app.use(
     });
   }
 );
-
-app.listen(3333, () => console.log("Server is running in port 3333 🚀"));
+const PORT = 3333;
+app.listen(PORT, () => console.log(`Server is running in port ${PORT} 🚀`));
