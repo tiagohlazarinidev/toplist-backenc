@@ -2,9 +2,8 @@
 CREATE TABLE "clients" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "email" TEXT NOT NULL,
-    "cpf" TEXT NOT NULL,
-    "name" TEXT NOT NULL,
     "pwd" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
     "birthday" TEXT NOT NULL,
     "document" TEXT NOT NULL,
     "address" TEXT NOT NULL,

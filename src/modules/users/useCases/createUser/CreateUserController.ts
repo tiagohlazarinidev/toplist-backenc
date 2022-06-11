@@ -4,8 +4,9 @@ import { CreateUserUseCase } from "./CreateUserUseCase";
 export class CreateUserController {
   async handle(req: Request, res: Response) {
     const {
-      name,
       email,
+      pwd,
+      name,
       birthday,
       document,
       address,
@@ -18,8 +19,9 @@ export class CreateUserController {
     const createUserUseCase = new CreateUserUseCase();
 
     const result = await createUserUseCase.execute({
-      name,
       email,
+      pwd,
+      name,
       birthday,
       document,
       address,

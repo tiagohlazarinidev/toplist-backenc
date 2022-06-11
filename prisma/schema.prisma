@@ -15,9 +15,8 @@ datasource db {
 model Client {
   id          String @id @default(uuid())
   email       String @unique
-  cpf         String
-  name        String
   pwd         String
+  name        String
   birthday    String
   document    String
   address     String
